@@ -13,9 +13,9 @@
 
             <div class="content modulesContent">
                 <div style="display: flex; flex-wrap: wrap;">
-                    {% comment %}A single modules row starts here!{% endcomment %}
+                    <!-- {% comment %}A single modules row starts here!{% endcomment %}
 
-                    {% comment %}A single modules row ends here!{% endcomment %}
+                    {% comment %}A single modules row ends here!{% endcomment %} -->
 
                     {% comment %}A single modules row starts here!{% endcomment %}
                  
@@ -37,7 +37,7 @@
                         </div>
                         {% endif %}
 
-                        {% if request.user.extrainfo.user_type != "staff" or "acadadmin" == global_var or "corelabcaretaker" == global_var %}
+                        {% if request.user.extrainfo.user_type == "student" or "acadadmin" == global_var or "Professor" == global_var or "Dean Academic" == global_var or "Assistant Professor" == global_var or "HOD" == global_var%}
 
                         <div style="width: calc(50% - 10px);
                         margin: 5px;
@@ -97,7 +97,8 @@
                     {% comment %}A single modules row ends here!{% endcomment %}
 
                     {% comment %}A single modules row starts here!{% endcomment %}
-                                       
+
+                    {% if request.user.extrainfo.user_type == "student" or request.user.extrainfo.user_type == "student"  or request.user.extrainfo.user_type == "student" or "Compounder" == global_var  %}                   
                         <div style="width: calc(50% - 10px);
                         margin: 5px;
                         box-sizing: border-box;">
@@ -113,6 +114,7 @@
                                 </div>
                             </a>
                         </div>
+                    {% endif %}
                         {% if request.user.extrainfo.user_type != "student"  %}
                         <div style="width: calc(50% - 10px);
                         margin: 5px;
@@ -323,7 +325,7 @@
                         <div style="width: calc(50% - 10px);
                         margin: 5px;
                         box-sizing: border-box;">
-                            <a class="ui large label" style="height: 120px; width:100%" href="/dashboard">
+                            <a class="ui large label" style="height: 120px; width:100%" href="/examination/SubmitGrade">
                                 <div class="ui centered grid">
                                     <div class="row">
                                         <i class="ui edit outline icon big"></i>
